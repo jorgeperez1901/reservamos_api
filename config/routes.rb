@@ -14,5 +14,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     get 'places', to: 'places#collection'
+    get 'show', to: 'places#show'
   end
+  
 end
