@@ -1,5 +1,6 @@
 class Auth::RegistrationsController < ApplicationController
-
+  skip_before_action :authenticate_request
+  
   def create
     user = User.new(user_params)
 

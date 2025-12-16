@@ -87,6 +87,7 @@ GEM
     bootsnap (1.19.0)
       msgpack (~> 1.2)
     builder (3.3.0)
+    byebug (11.1.3)
     cgi (0.5.1)
     concurrent-ruby (1.3.6)
     connection_pool (2.5.5)
@@ -223,6 +224,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   bootsnap
+  byebug
   debug
   httparty
   io-console (< 0.7)

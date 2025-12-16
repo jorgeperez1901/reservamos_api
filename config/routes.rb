@@ -11,4 +11,8 @@ Rails.application.routes.draw do
     post 'signup', to: 'registrations#create'
     post 'login', to: 'sessions#create'
   end
+
+  namespace :api do
+    get 'places', to: 'places#collection'
+  end
 end
