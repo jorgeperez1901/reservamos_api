@@ -50,3 +50,5 @@ gem 'bcrypt'
 gem 'jwt'
 gem 'io-console', '< 0.7'
 gem 'httparty'
+gem 'rack-cors'
+
