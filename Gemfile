@@ -45,3 +45,7 @@ group :development do
   # gem "spring"
 end
 
+gem 'bcrypt'
+gem 'jwt'
+gem 'io-console', '< 0.7'
+
