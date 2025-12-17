@@ -1,43 +1,108 @@
-# README
+# Reservamos API 🌎🌤️
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+API desarrollada en **Ruby on Rails**.  
+Esta API se encarga de la autenticación de usuarios y de integrar información de ciudades desde **Reservamos** con datos climáticos obtenidos desde **OpenWeather**.
 
-Things you may want to cover:
+---
 
-* Ruby version 3.0.0
-  
-* Rails 6.x o 7.x
+## 🚀 Tecnologías
 
-* Bundler
+- Ruby **3.0.0**
+- Ruby on Rails **6.x / 7.x**
+- SQLite
+- JWT (autenticación)
+- HTTParty
+- OpenWeather API
 
-* System dependencies
+---
 
-* Configuration
+## 📋 Requisitos
 
-* Database SQLite
+- Ruby **3.0.0** (recomendado con RVM)
+- Rails 6.x o 7.x
+- Bundler
+- SQLite
+- Git
 
-* git clone git@github.com:jorgeperez1901/reservamos_api.git
-  
-* cd reservamos_api
-  
-* rvm install ruby 3.0.0
-  
-* bundle install
+---
 
-* rails db:create
+## ⚙️ Instalación
 
-* rails db:migrate
+Clona el repositorio:
 
-* EDITOR="nano" rails credentials:edit
-* add next information:
-  openweather:
-api_key: 0eebd1fcf852d29ca0340c5c451d4c9a
+bash
+git clone git@github.com:jorgeperez1901/reservamos_api.git
+cd reservamos_api
 
-* How run:
-* rails server
-* access in your browser http://localhost:3000
+nstala la versión de Ruby:
+
+rvm install 3.0.0
+rvm use 3.0.0
 
 
+Instala dependencias:
+
+bundle install
 
 
+Configura la base de datos:
+
+rails db:create
+rails db:migrate
+---
+
+# Configuración de credenciales 🔐
+
+Edita las credenciales de Rails:
+
+EDITOR="nano" rails credentials:edit
+
+Agrega la siguiente información:
+
+openweather:
+  api_key: YOUR_OPENWEATHER_API_KEY
+---
+
+# ▶️ Ejecución
+
+Levanta el servidor:
+
+rails server
+
+
+Accede desde el navegador o cliente HTTP:
+
+http://localhost:3000
+
+# 🔑 Autenticación
+
+La API utiliza JWT para proteger los endpoints.
+
+Flujo:
+
+Signup / Login
+
+Generación de token
+
+Envío del token en el header:
+
+Authorization: Bearer <token>
+
+# 🌎 Endpoints principales
+# 🔹 Autenticación
+
+POST /auth/signup
+
+POST /auth/login
+
+# 🔹 Places
+
+GET /api/places?type=city
+
+Lista de ciudades populares con clima actual
+
+# 🔹 Forecast
+
+GET /api/show/:lat/:lon
+
+Pronóstico del clima a 7 días
